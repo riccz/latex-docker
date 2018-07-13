@@ -1,13 +1,14 @@
-FROM debian:stretch
+FROM debian:stretch-slim
 MAINTAINER Riccardo Zanol <ricc@zanol.eu>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -q && apt-get install -qy \
-    texlive-full \
+    git \
+    gnuplot \
     latex-mk \
-    python-pygments gnuplot \
-    make git \
-    && rm -rf /var/lib/apt/lists/*
+    make \
+    python-pygments \
+    texlive-full
 
 WORKDIR /data
 VOLUME ["/data"]
