@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM ubuntu:impish
 LABEL maintainer="ricc@zanl.eu"
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update && \
@@ -8,8 +8,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update && \
 	gnuplot \
 	latex-mk \
 	make \
-	python-pygments \
 	python3 \
+	python3-pygments \
 	texlive-full
 
 WORKDIR /data
